@@ -34,7 +34,7 @@ Pantalla explicativa del nivel 3.
 Una previsualización de la jugabilidad del nivel 1.
 
 
-![Previsualizacion Nivel 2](./assets/jugabiliadadNivel2.png)
+![Previsualizacion Nivel 2](./assets/jugabilidadNivel2.png)
 Una previsualización de la jugabilidad del nivel 2.
 
 
