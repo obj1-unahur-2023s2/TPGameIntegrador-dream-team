@@ -42,7 +42,7 @@ Una previsualización de la jugabilidad del nivel 2.
 Una previsualización de la jugabilidad del nivel 3.
 
 
-![Pantalla perdiste](./assets/pantallaPierde.png)
+![Pantalla perdiste]()
 Pantalla de perdiste del juego.
 
 
