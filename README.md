@@ -46,7 +46,7 @@ Una previsualización de la jugabilidad del nivel 3.
 Pantalla de perdiste del juego.
 
 
-![Pantalla ganaste](./assets/pantallaGanaste.png)
+![Pantalla ganaste]()
 Pantalla de ganaste del juego.
 
 
