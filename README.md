@@ -9,7 +9,7 @@
 
 - Galdin, Santino 
 
-- Avila,kevin Thomas 
+- Avila,Kevin Thomas 
 
  
 
