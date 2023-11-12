@@ -1,5 +1,5 @@
 import wollok.game.*
-import consolaInicio.*
+import consolaStart.*
 import nivel1.*
 import nivel2.*
 import nivel3.*
@@ -11,7 +11,7 @@ object inicio{
 	method config() {
 	    
 		//titulo y limites del juego
-		game.title("Juego espacial")
+		game.title("Invasion alienigena")
 		game.height(15)
 		game.width(25)
 		game.clear()
@@ -36,7 +36,7 @@ class PantallaNivel inherits Pantalla {
 	}
 	method pasarAlNivel() {
 		game.sound(audioEnter).play()
-		nivelActual.config()
+		nivelActual.config()//podemos poner el nivel en el que querramos empezar
 	}
 }
 
@@ -66,7 +66,6 @@ object pantallaInicial inherits PantallaNoNivel(audioEnter = "empezar.mp3", pant
 	override method configurar() {
 			game.addVisual(self)
 			keyboard.enter().onPressDo{self.pasarASiguientePantalla()}
-
 	}
 }
 

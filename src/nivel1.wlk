@@ -15,9 +15,9 @@ object nivel1 inherits LogicaNivel (audioNivel = game.sound("nivel1.mp3")) {
 	const property naveEnemiga1 = new AienEnemigo(image = "alienEnemigo.png") 
 	const property naveEnemiga2 = new AienEnemigo(image = "alienenemigo2.png")
 	const property naveEnemiga3 = new AienEnemigo(image = "alienenemigo3.png")
-	const property vidaNaveEnemiga1 = new VidasEnemigos3(naveEspacial = naveEnemiga1,position = game.at(19,13))
-	const property vidaNaveEnemiga2 = new VidasEnemigos3(naveEspacial = naveEnemiga2,position = game.at(19,12))
-	const property vidaNaveEnemiga3 = new VidasEnemigos3(naveEspacial = naveEnemiga3,position = game.at(19,11))
+	const property vidaNaveEnemiga1 = new VidasEnemigos3(naveEspacial = naveEnemiga1,position = game.at(15,13))
+	const property vidaNaveEnemiga2 = new VidasEnemigos3(naveEspacial = naveEnemiga2,position = game.at(15,12))
+	const property vidaNaveEnemiga3 = new VidasEnemigos3(naveEspacial = naveEnemiga3,position = game.at(15,11))
 	const property vidasNaveEnenemiga1 = new VidasEnemigos(numero=1,position =  game.at(22,13))
 	const property vidasNaveEnenemiga2 = new VidasEnemigos(numero=2,position =  game.at(22,12))
 	const property vidasNaveEnenemiga3 = new VidasEnemigos(numero=3,position =  game.at(22,11))
@@ -25,7 +25,7 @@ object nivel1 inherits LogicaNivel (audioNivel = game.sound("nivel1.mp3")) {
 	const property balasLista = [cargarBalas1, cargarBalas2]
 	const property enemigosLista = [naveEnemiga1, naveEnemiga2, naveEnemiga3]
 	
-	override method visuales() = [fondo1, naveInicial, vidas, contadorNafta,cantidadNafta,vidasNaveEnenemiga1,vidasNaveEnenemiga2,vidasNaveEnenemiga3,vidaNaveEnemiga1,vidaNaveEnemiga2,vidaNaveEnemiga3, contadorBalas,cantidadBalas, naveEnemiga1,naveEnemiga2,naveEnemiga3,tanqueNafta1,tanqueNafta2,cargarBalas1,cargarBalas2]
+	override method visuales() = [fondo1, naveInicial, vidas, contadorNafta,cantidadNafta,contadorBalas,cantidadBalas, naveEnemiga1,naveEnemiga2,naveEnemiga3,tanqueNafta1,tanqueNafta2,cargarBalas1,cargarBalas2]
 
 	override method colisiones(){
 		game.onCollideDo(naveInicial,{algo=>algo.teChoco(naveInicial)})

@@ -1,5 +1,5 @@
 import wollok.game.*
-import consolaInicio.*
+import consolaStart.*
 import consola.*
 import nivel1.*
 import nivel2.*
@@ -41,7 +41,4 @@ class LogicaNivel {
 	}
 	
 	method onTick() {}
-	
-
-	
 }

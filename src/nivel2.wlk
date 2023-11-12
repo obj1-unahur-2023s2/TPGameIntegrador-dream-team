@@ -41,7 +41,7 @@ object nivel2 inherits LogicaNivel (audioNivel = game.sound("nivel2.mp3")){
 	
 	override method config(){
 		super()
-		naveInicial.nafta(400)
+		naveInicial.nafta(250)
 	}	
 
 	override method colisiones(){
@@ -65,7 +65,7 @@ object reloj{
 
 object contrareloj{
 	var property position = game.at(13,14.5)
-	var property reloj = 40	
+	var property reloj = 20	
 	var text = self.reloj()
 	var property textColor= "#FFFFFF"
 	

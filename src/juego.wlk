@@ -53,7 +53,7 @@ object naveInicial {
 	const image = "naveDerecha.png"
 	var position = game.origin()	
 	var property vida = 3
-	var property nafta = 400
+	var property nafta = 250
 	var property balas = 20
 	var property objetosRecogidos = 0
 	var property puedeDisparar=true
