@@ -5,22 +5,13 @@ import nivel2.*
 import nivel3.*
 import logicaNiveles.*
 import juego.*
-object nivel1 inherits LogicaNivel (audioNivel = game.sound("nivel1.mp3")) {
-	
+object nivel1 inherits LogicaNivel (audioNivel = game.sound("nivel1.mp3"),pantallaNivel=pantallaNivel2) {
 	const property fondo1 = new Fondo (image= "fondo1.png")
-	const tanqueNafta1 = new TanqueDeNafta() 
-	const tanqueNafta2 = new TanqueDeNafta()
 	const cargarBalas1 = new Balas()
 	const cargarBalas2 = new Balas()
 	const property naveEnemiga1 = new AienEnemigo(image = "alienEnemigo.png") 
 	const property naveEnemiga2 = new AienEnemigo(image = "alienenemigo2.png")
 	const property naveEnemiga3 = new AienEnemigo(image = "alienenemigo3.png")
-	const property vidaNaveEnemiga1 = new VidasEnemigos3(naveEspacial = naveEnemiga1,position = game.at(15,13))
-	const property vidaNaveEnemiga2 = new VidasEnemigos3(naveEspacial = naveEnemiga2,position = game.at(15,12))
-	const property vidaNaveEnemiga3 = new VidasEnemigos3(naveEspacial = naveEnemiga3,position = game.at(15,11))
-	const property vidasNaveEnenemiga1 = new VidasEnemigos(numero=1,position =  game.at(22,13))
-	const property vidasNaveEnenemiga2 = new VidasEnemigos(numero=2,position =  game.at(22,12))
-	const property vidasNaveEnenemiga3 = new VidasEnemigos(numero=3,position =  game.at(22,11))
 	const property tanquesLista = [tanqueNafta1, tanqueNafta2]
 	const property balasLista = [cargarBalas1, cargarBalas2]
 	const property enemigosLista = [naveEnemiga1, naveEnemiga2, naveEnemiga3]
@@ -46,18 +37,9 @@ object nivel1 inherits LogicaNivel (audioNivel = game.sound("nivel1.mp3")) {
 		
 	}
 		
-	method pasarASiguientePantalla() {
+	override method pasarASiguientePantalla() {
 		if (self.enemigosLista() == []) {
-			audioNivel.pause()
-			game.clear()
-			pantallaNivel2.configurar()
+			super()
 		}
-	}
-	
-	method perder() {
-		game.clear()
-		audioNivel.pause()
-		perdisteAudio.play()
-		pantallaPerdiste.configurar()
 	}
 }

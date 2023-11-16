@@ -1,13 +1,16 @@
 import wollok.game.*
-import consolaStart.*
 import consola.*
 import nivel1.*
 import nivel2.*
 import nivel3.*
 import juego.*
+
 class LogicaNivel {
 	const property audioNivel
+	var pantallaNivel
 	const property perdisteAudio = game.sound("perdiste.mp3")
+	const tanqueNafta1 = new TanqueDeNafta() 
+	const tanqueNafta2 = new TanqueDeNafta()
 	
 	method config(){
 
@@ -38,6 +41,19 @@ class LogicaNivel {
 	
 	method colisiones(){
 		game.onCollideDo(naveInicial,{algo=>algo.teChoco(naveInicial)})
+	}
+	
+	method pasarASiguientePantalla(){
+		audioNivel.pause()
+		game.clear()
+		pantallaNivel.configurar()
+	}
+	
+	method perder(){
+		game.clear()
+		audioNivel.pause()
+		perdisteAudio.play()
+		pantallaPerdiste.configurar()
 	}
 	
 	method onTick() {}

@@ -6,7 +6,7 @@ import nivel3.*
 import logicaNiveles.*
 import juego.*
 
-object nivel2 inherits LogicaNivel (audioNivel = game.sound("nivel2.mp3")){
+object nivel2 inherits LogicaNivel (audioNivel = game.sound("nivel2.mp3"),pantallaNivel=pantallaNivel3){
 	const property fondoNivel2 = new Fondo (image= "fondo2.png")
 	const pieza1 = new Piezas(numero = 1)
 	const pieza2 = new Piezas(numero = 2)
@@ -15,27 +15,18 @@ object nivel2 inherits LogicaNivel (audioNivel = game.sound("nivel2.mp3")){
 	const pieza5 = new Piezas(numero = 5)
 	const pieza6 = new Piezas(numero = 6)
 	const pieza7 = new Piezas(numero = 7)
-	const tanqueNafta1 = new TanqueDeNafta()
-	const tanqueNafta2 = new TanqueDeNafta()
 	
 	override method visuales() = [fondoNivel2,naveInicial,vidas,contadorNafta,reloj, contrareloj,tanqueNafta1,tanqueNafta2,cantidadNafta,cantidadPieza,contadorPieza,pieza1,pieza2,pieza3,pieza4,pieza5,pieza6,pieza7]
 	
-	method pasarASiguientePantalla() {
+	override method pasarASiguientePantalla() {
 		if (naveInicial.objetosRecogidos() == 7) {
-			audioNivel.pause()
-			game.clear()
-			pantallaNivel3.configurar()
+				super()
 		}
 	}
 		
-	method perder() {
-		const perdiste2 = game.sound("perdiste2.mp3")
+	override method perder() {
 		if (contrareloj.reloj() == 0) {
-				game.clear()
-				audioNivel.pause()
-				perdisteAudio.play()
-				pantallaPerdiste.configurar()
-				
+				super()
 		  	}
 		}
 	

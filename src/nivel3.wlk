@@ -5,7 +5,7 @@ import nivel1.*
 import nivel2.*
 import logicaNiveles.*
 import juego.*
-object nivel3 inherits LogicaNivel (audioNivel = game.sound("nivel3.mp3")){
+object nivel3 inherits LogicaNivel (audioNivel = game.sound("nivel3.mp3"),pantallaNivel=pantallaGanaste){
 	const fondoNivel3 = new Fondo (image="fondo3.png")
 	const property corazado1 = new Corozado()
 	const property vidaNaveEnemiga1 = new VidasEnemigos5(naveEspacial = corazado1,position = game.at(4,8))
@@ -14,7 +14,6 @@ object nivel3 inherits LogicaNivel (audioNivel = game.sound("nivel3.mp3")){
 	
 	override method visuales() = [fondoNivel3,corazado1,naveInicialNivel3,contadorBalasNivel3,cantidadBalasNivel3,vidaNaveEnemiga1,vidaHalcon444,vidaAcorazador,vidasNivel3]
 	 
-	
 	override method config(){	
 		
 		game.clear()
@@ -32,9 +31,6 @@ object nivel3 inherits LogicaNivel (audioNivel = game.sound("nivel3.mp3")){
 		keyboard.space().onPressDo({naveInicialNivel3.disparar()})	
 	}
 	
-	
-	override method colisiones() {}
-	
 	override method onTick(){
 		game.onTick(1,"actualizar contador balas",{cantidadBalasNivel3.actualizar()})
 		game.onTick(1,"actualizar cantidad vidas corazado1",{corazado1.actualizar()})
@@ -43,19 +39,10 @@ object nivel3 inherits LogicaNivel (audioNivel = game.sound("nivel3.mp3")){
 		game.onTick(1000, "disparoNaveEnemiga", {corazado1.disparar()})		
 	}
 	
-	method pasarASiguientePantalla() {
+	override method pasarASiguientePantalla() {
 		const ganaste = game.sound("ganaste.mp3")
-		game.clear()
-		audioNivel.pause()
+		super()
 		ganaste.play()
-		pantallaGanaste.configurar()
-	}
-	
-	method perder() {
-		game.clear()
-		audioNivel.pause()
-		perdisteAudio.play()
-		pantallaPerdiste.configurar()
 	}
 }
 

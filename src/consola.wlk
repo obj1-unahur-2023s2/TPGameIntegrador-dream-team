@@ -1,5 +1,4 @@
 import wollok.game.*
-import consolaStart.*
 import nivel1.*
 import nivel2.*
 import nivel3.*
